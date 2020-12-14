@@ -12,7 +12,7 @@ maxlength: 280
   },
   userName: { 
       
-        type: Sting,
+        type: String,
         required: 'username is required!'
   },
 createdAt: {

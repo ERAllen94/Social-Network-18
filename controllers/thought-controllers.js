@@ -1,4 +1,4 @@
-const { Thought, User } = require('../models');
+const { Thought, User } = require('../model');
 
 const thoughtController = {
     getThought(req, res) {
@@ -93,7 +93,7 @@ const thoughtController = {
         )
             .then(data => {
                 if (!data) {
-                    return res.status(404).json({ message: 'No thought found with this id! ' });
+                    return res.status(404).json({ message: 'Thought was deleted! ' });
                 }
                 res.json(data);
             })

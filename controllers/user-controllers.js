@@ -1,6 +1,11 @@
-const { User, Thought } = require('../models');
+const { User, Thought } = require('../model');
 
 const userController = {
+    createUser(req, res) {
+        User.create(req.body)
+        .then(dbUserData => res.json(dbUserData)
+        .catch(err => res.status(400).json(err)));
+    },
     getUser(req, res) {
         User.find()
             .then(data => res.json(data))
@@ -23,11 +28,11 @@ const userController = {
             .then(data => res.json(data))
             .catch(err => res.json(err));
     },
-    postUser(req, res) {
-        User.create(req.body)
-            .then(data => res.json(data))
-            .catch(err => res.status(400).json(err));
-    },
+    // postUser(req, res) {
+    //     User.create(req.body)
+    //         .then(data => res.json(data))
+    //         .catch(err => res.status(400).json(err));
+    // },
     updateUser(req, res) {
         User.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true })
             .then(data => {
