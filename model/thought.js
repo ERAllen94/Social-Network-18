@@ -6,23 +6,21 @@ const ThoughtSchema = new Schema({
   thoughtText: {
     type: String,
     required: 'userName is required!',
-     minlength: 1,
-     maxlength: 280
+    minlength: 1,
+    maxlength: 280
   },
   createAt: {
-type: Date,
-default: Date.now,
-get: (date) =>  moment(date).format("MMM Do YY")
+    type: Date,
+    default: Date.now,
+    get: (date) => moment(date).format("MMM Do YY")
   },
-  username: [
-      {
-        type: String,
-        required: 'userName is required!'
-      }
-  ],
+  username: {
+    type: String,
+    required: 'userName is required!'
+  },
 
   reactions: [reactionSchema]
-,
+  ,
 });
 
 

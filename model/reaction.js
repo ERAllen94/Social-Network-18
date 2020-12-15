@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema,Types } = require('mongoose');
 
 const reactionSchema = new Schema({
   reactionId: {
@@ -7,13 +7,13 @@ const reactionSchema = new Schema({
   },
   reactionBody: {
 type: String,
-required: 'body is required',
+required: true,
 maxlength: 280
   },
   userName: { 
       
         type: String,
-        required: 'username is required!'
+        required: true
   },
 createdAt: {
     type: Date,
