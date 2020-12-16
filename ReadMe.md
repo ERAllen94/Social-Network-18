@@ -26,4 +26,3 @@ https://github.com/ERAllen94/Social-Network-18
 
 # Demo
 
-https://drive.google.com/drive/u/0/my-drive
